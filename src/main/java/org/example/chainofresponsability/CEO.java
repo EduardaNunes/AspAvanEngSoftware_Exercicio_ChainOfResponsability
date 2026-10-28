@@ -2,11 +2,13 @@ package org.example.chainofresponsability;
 
 public class CEO extends Aprovador {
 
-    public CEO() {
-        super(Float.MAX_VALUE);
+    public CEO(Aprovador aprovadorSuperior) {
+        listaTiposDespesa.add(TipoDespesaExcepcional.getTipoDespesaExcepcional());
+        setAprovadorSuperior(aprovadorSuperior);
     }
 
     public String getCargo() {
         return "CEO";
     }
+
 }

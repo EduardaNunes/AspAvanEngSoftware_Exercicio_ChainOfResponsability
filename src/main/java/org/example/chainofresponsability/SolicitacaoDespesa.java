@@ -2,19 +2,18 @@ package org.example.chainofresponsability;
 
 public class SolicitacaoDespesa {
 
-    private float valor;
-    private String descricao;
+    private TipoDespesa tipoDespesa;
 
-    public SolicitacaoDespesa(float valor, String descricao) {
-        this.valor = valor;
-        this.descricao = descricao;
+    public SolicitacaoDespesa(TipoDespesa tipoDespesa) {
+        this.tipoDespesa = tipoDespesa;
     }
 
-    public float getValor() {
-        return valor;
+    public TipoDespesa getTipoDespesa() {
+        return tipoDespesa;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public void setTipoDespesa(TipoDespesa tipoDespesa) {
+        this.tipoDespesa = tipoDespesa;
     }
+
 }

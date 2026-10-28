@@ -3,7 +3,7 @@ package org.example.chainofresponsability;
 public class Diretor extends Aprovador {
 
     public Diretor(Aprovador aprovadorSuperior) {
-        super(50000.0f);
+        listaTiposDespesa.add(TipoDespesaGrande.getTipoDespesaGrande());
         setAprovadorSuperior(aprovadorSuperior);
     }
 

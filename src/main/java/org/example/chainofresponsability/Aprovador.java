@@ -1,13 +1,11 @@
 package org.example.chainofresponsability;
 
+import java.util.ArrayList;
+
 public abstract class Aprovador {
 
-    protected float limiteAprovacao;
+    protected ArrayList listaTiposDespesa = new ArrayList();
     private Aprovador aprovadorSuperior;
-
-    public Aprovador(float limiteAprovacao) {
-        this.limiteAprovacao = limiteAprovacao;
-    }
 
     public Aprovador getAprovadorSuperior() {
         return aprovadorSuperior;
@@ -20,14 +18,15 @@ public abstract class Aprovador {
     public abstract String getCargo();
 
     public String aprovarDespesa(SolicitacaoDespesa solicitacao) {
-        if (solicitacao.getValor() <= this.limiteAprovacao) {
+        if (listaTiposDespesa.contains(solicitacao.getTipoDespesa())) {
             return getCargo();
         }
         else {
             if (aprovadorSuperior != null) {
                 return aprovadorSuperior.aprovarDespesa(solicitacao);
             }
-            else {
+            else
+            {
                 return "Sem aprovação";
             }
         }
